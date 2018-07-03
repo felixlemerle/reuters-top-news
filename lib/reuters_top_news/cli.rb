@@ -7,9 +7,9 @@ class ReutersTopNews::CLI
   end
 
   def list_articles
-    ReutersTopNews::Scraper.get_page
+    ReutersTopNews::Scraper.new.scrape_articles
     ReutersTopNews::Article.all.each.with_index(1) do |article, i|
-      puts "#{i} | #{article.title} | #{article.time}"
+      puts "#{i} / #{article.title} / #{article.time}"
     end
 #    puts <<-DOC.gsub /^\s*/, ''
 #      1 | Trump makes veiled WTO threat after EU warning | 5:26 PM
