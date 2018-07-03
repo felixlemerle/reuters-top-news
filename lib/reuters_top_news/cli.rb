@@ -2,11 +2,11 @@ class ReutersTopNews::CLI
 
   def call
     puts "Reuters Top News:"
-    list_news
+    list_articles
     start
   end
 
-  def list_news
+  def list_articles
     puts <<-DOC.gsub /^\s*/, ''
       1 | Trump makes veiled WTO threat after EU warning | 5:26 PM
       2 | Junior soccer team found alive in Thai cave after nine days | 12:02 PM
@@ -22,7 +22,7 @@ class ReutersTopNews::CLI
       puts "Please type the number of the article you would want to read, list or exit:"
       input = gets.strip
       if input == "list"
-        list_news
+        list_articles
       elsif (input.to_i <= 0 || input.to_i > 5) && input != "exit"
         puts "Incorrect input."
       elsif input.to_i > 0 && input.to_i <= 5
