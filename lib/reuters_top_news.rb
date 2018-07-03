@@ -1,5 +1,2 @@
-require "reuters_top_news/version"
-
-module ReutersTopNews
-  # Your code goes here...
-end
+require_relative './reuters_top_news/version'
+require_relative './reuters_top_news/cli'

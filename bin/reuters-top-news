@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-puts "Reuters Top News"
+require './lib/reuters_top_news'
+
+ReutersTopNews::CLI.new.call
