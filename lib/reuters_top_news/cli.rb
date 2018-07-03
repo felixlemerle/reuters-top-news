@@ -3,7 +3,7 @@ class ReutersTopNews::CLI
   def call
     puts "Reuters Top News:"
     list_news
-    menu
+    start
   end
 
   def list_news
@@ -14,6 +14,22 @@ class ReutersTopNews::CLI
       4 | Suspect in planned Cleveland July 4 bombing appears in court | 8:26 AM
       5 | Probe into Facebook's data breach broadens: Washington Post | 8:26 AM
       DOC
+  end
+
+  def start
+    input = nil
+    while input != "exit"
+      puts "Please type the number of the article you would want to read, list or exit:"
+      input = gets.strip
+      if input == "list"
+        list_news
+      elsif (input.to_i <= 0 || input.to_i > 5) && input != "exit"
+        puts "Incorrect input."
+      elsif input.to_i > 0 && input.to_i <= 5
+        puts "1-5"
+      end
+    end
+    puts "Thank you for using Reuters Top News! Goodbye."
   end
 
 end
