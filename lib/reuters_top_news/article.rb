@@ -1,10 +1,11 @@
 class ReutersTopNews::Article
-  attr_accessor :title, :time, :url, :text
+  attr_accessor :title, :author, :time, :url, :text
 
   @@all = []
 
-  def initialize(title, time, url, text)
+  def initialize(title, author, time, url, text)
     @title = title
+    @author = author
     @time = time
     @url = url
     @text = text

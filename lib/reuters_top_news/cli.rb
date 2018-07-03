@@ -7,6 +7,7 @@ class ReutersTopNews::CLI
   end
 
   def list_articles
+    ReutersTopNews::Scraper.get_page
     ReutersTopNews::Article.all.each.with_index(1) do |article, i|
       puts "#{i} | #{article.title} | #{article.time}"
     end
